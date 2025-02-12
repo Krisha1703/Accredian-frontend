@@ -1801,4 +1801,7 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-ba
+@property --tw-backdrop-sepia {
+  syntax: "*";
+  inherits: false;
+}
