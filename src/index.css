@@ -1,0 +1,8 @@
+/* src/index.css */
+@import "tailwindcss";
+
+.bg-opacity-50{
+    opacity: 0.5;
+  }
+
+
