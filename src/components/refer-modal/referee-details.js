@@ -1,18 +1,19 @@
 import React from 'react';
-import { Select, MenuItem, InputLabel, FormControl, Button, Typography, Box } from '@mui/material';
+import { Select, MenuItem, InputLabel, FormControl, Button, Typography, Box, FormHelperText  } from '@mui/material';
 import ContactFields from './contact-fields';
 
-const RefereeDetails = ({ formData, handleChange, handleMajorChange, nicheCourse, setNicheCourse, major, prevPage, nicheCourses }) => {
+const RefereeDetails = ({ formData, errors, handleChange, handleMajorChange, handleNicheCourseChange, prevPage, nicheCourses }) => {
     return (
         <>
-            <Typography variant="h6" color="primary" gutterBottom sx={{marginTop: "2vh"}}>
+            <Typography variant="h6" color="primary" gutterBottom sx={{ marginTop: "2vh" }}>
                 Your Friend's Details
             </Typography>
 
             <ContactFields 
                 formData={formData} 
                 handleChange={handleChange} 
-                prefix="friend" 
+                prefix="friend"
+                errors={errors} 
             />
 
             {/* Course Selection */}
@@ -22,8 +23,8 @@ const RefereeDetails = ({ formData, handleChange, handleMajorChange, nicheCourse
                     <Select
                         labelId="main-major-label"
                         id="main-major"
-                        name="main-major"
-                        value={major}
+                        name="major" 
+                        value={formData.major}
                         onChange={handleMajorChange}
                     >
                         <MenuItem value="">
@@ -33,19 +34,20 @@ const RefereeDetails = ({ formData, handleChange, handleMajorChange, nicheCourse
                         <MenuItem value="robotics">Robotics</MenuItem>
                         <MenuItem value="machine-learning">Machine Learning</MenuItem>
                     </Select>
+                    {errors.major && <FormHelperText sx={{color: "red"}}>{errors.major} *</FormHelperText>}
                 </FormControl>
             </Box>
 
-            {major && (
+            {formData.major && (
                 <Box sx={{ my: 2 }}>
                     <FormControl fullWidth variant="standard">
                         <InputLabel id="niche-course-label">Select Niche Course</InputLabel>
                         <Select
                             labelId="niche-course-label"
                             id="niche-course"
-                            name="niche-course"
-                            value={nicheCourse}
-                            onChange={(e) => setNicheCourse(e.target.value)}
+                            name="nicheCourse" 
+                            value={formData.nicheCourse} 
+                            onChange={handleNicheCourseChange} 
                         >
                             <MenuItem value="">
                                 <em>Select Course</em>
@@ -56,6 +58,7 @@ const RefereeDetails = ({ formData, handleChange, handleMajorChange, nicheCourse
                                 </MenuItem>
                             ))}
                         </Select>
+                        {errors.nicheCourse && <FormHelperText sx={{color: "red"}}>{errors.nicheCourse} *</FormHelperText>}
                     </FormControl>
                 </Box>
             )}

@@ -2,7 +2,7 @@ import React from 'react';
 import ContactFields from './contact-fields';
 import {  Checkbox, FormControlLabel, Button, Typography, Box } from '@mui/material';
 
-const ReferrerDetails = ({ formData, handleChange, nextPage }) => {
+const ReferrerDetails = ({ formData, handleChange, nextPage, errors }) => {
     return (
         <>
             <Typography variant="h6" color="primary" gutterBottom sx={{marginTop: "2vh"}}>
@@ -11,7 +11,8 @@ const ReferrerDetails = ({ formData, handleChange, nextPage }) => {
             
             <ContactFields 
                 formData={formData} 
-                handleChange={handleChange} 
+                handleChange={handleChange}
+                errors={errors} 
                 prefix="your" 
             />
 

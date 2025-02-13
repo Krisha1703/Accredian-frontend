@@ -10,17 +10,18 @@ export default function ReferModal({ onClose }) {
         page,
         formData,
         major,
+        errors,
         nicheCourse,
         handleChange,
         handleMajorChange,
-        setNicheCourse,
+        handleNicheCourseChange,
         nicheCourses,
+        handleSubmit,
         nextPage,
         prevPage
     } = useReferForm();
 
     const progress = calculateProgress(formData, major, nicheCourse);
-
     return (
         <>
             <div className="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
@@ -31,7 +32,7 @@ export default function ReferModal({ onClose }) {
                     <div className="relative  bg-white  overflow-hidden p-5">   
                         <ModalHeading onClose={onClose}/>
 
-                        <form className="lg:w-5/6 w-11/12 relative">
+                        <form className="lg:w-5/6 w-11/12 relative" onSubmit={handleSubmit}>
                             <div className='flex'>
                                 <img src="/form image1.png" width={300} height={300} alt='img1' className='w-1/2 lg:block hidden'/>
 
@@ -40,6 +41,7 @@ export default function ReferModal({ onClose }) {
                                     {page === 1 && (
                                         <ReferrerDetails 
                                             formData={formData}
+                                            errors={errors}
                                             handleChange={handleChange}
                                             nextPage={nextPage}
                                         />
@@ -49,15 +51,14 @@ export default function ReferModal({ onClose }) {
                                         <>
                                             <RefereeDetails 
                                                 formData={formData}
+                                                errors={errors}
                                                 handleChange={handleChange}
                                                 handleMajorChange={handleMajorChange}
-                                                nicheCourse={nicheCourse}
-                                                setNicheCourse={setNicheCourse}
-                                                major={major}
+                                                handleNicheCourseChange={handleNicheCourseChange}
+                                                nicheCourses={nicheCourses}
                                                 prevPage={prevPage}
-                                                nicheCourses={nicheCourses} 
-
                                             />
+
                                         </>
                                     )}
 
