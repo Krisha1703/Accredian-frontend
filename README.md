@@ -7,7 +7,7 @@ This is a **Refer & Earn landing page** built using the **React JS**, **Tailwind
 - **Referral Form** 📋: A multi-step form to submit referrals with user details and course selection.
 - **Major & Niche Course Selection** 🎓: Dynamic course options based on the selected major.
 - **Form Validation** ✅: Input validation using **Zod** schema to ensure accurate data submission.
-- **Responsive UI** 📱: Built with **Tailwind CSS** for a modern and responsive design.
+- **Responsive UI** 📱: Built with **Tailwind CSS** and **Material UI** for a modern and responsive design.
 - **API Integration** 🌐: Backend API built with **Express** and **Prisma ORM**, connected to **MySQL**.
 - **Deployment** 🚀: Frontend deployed on **Vercel** and Backend on **Render**.
 
@@ -47,19 +47,23 @@ This is a **Refer & Earn landing page** built using the **React JS**, **Tailwind
    npm start
    ```
 
-## 📸 Screenshots
+## 📸 **Screenshots**
 
-- **Refer & Earn Landing Page 🏠:**
+- **Refer & Earn Landing Page 🌍:**
   ![Hero Section](/public/screenshots/hero-section.png) 
 
-- **Referral Modal 🏠:**
+- **Referral Modal 📦:**
   ![Refer Modal](/public/screenshots/refer-modal.png) 
 
-- **Form Validation 📝:**
+- **Form Validation ✍️:**
   ![Form Validation](/public/screenshots/zod-validation1.png) 
 
-- **Form Validation 📝:**
+- **Form Validation 🧑‍💻:**
   ![Form Validation](/public/screenshots/zod-validation2.png) 
+
+- **Referral Success 🎉:**
+  ![Success](/public/screenshots/success.png)
+
 
 
 ## 🔧 Technologies Used

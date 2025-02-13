@@ -68,7 +68,7 @@ const useReferForm = () => {
                 const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000/api/referrals';
                 console.log(process.env.REACT_APP_API_URL);
                 const response = await axios.post(apiUrl, formData);
-                alert(`Referral submitted successfully! Response: ${response.data}`);
+                alert(`Referral submitted successfully!`);
             } catch (error) {
                 if (error.response) {
                     // Server Error
