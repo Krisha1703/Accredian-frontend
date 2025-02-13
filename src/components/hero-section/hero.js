@@ -1,13 +1,15 @@
-import React from 'react'
-import ReferModal from '../refer-modal/refer-modal'
+import React from 'react';
+import ReferModal from '../refer-modal/refer-modal';
 import { useState, useEffect } from "react";
 
 
 const Hero = () => {
     const [showReferModal, setShowReferModal] = useState(false);
+    
     const handleModalToggle = () => {
         setShowReferModal((prev) => !prev);
       };
+
      // Disable background scrolling when modal is open
     useEffect(() => {
         if (showReferModal) {
