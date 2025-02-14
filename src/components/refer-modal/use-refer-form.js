@@ -63,29 +63,42 @@ const useReferForm = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        // Validate the form before submitting
         if (validateForm()) {
             try {
-                const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000/api/referrals';
-                console.log(process.env.REACT_APP_API_URL);
+                const apiUrl = process.env.REACT_APP_API_URL;
                 const response = await axios.post(apiUrl, formData);
-                alert(`Referral submitted successfully!`);
+    
+                // Check if the response contains an error
+                if (response.data && response.data.error) {
+                    alert(`Error: ${response.data.error}`);
+                    return; 
+                }
+    
+                // If no error, show success message
+                alert("Referral submitted successfully!");
+    
             } catch (error) {
                 if (error.response) {
-                    // Server Error
+                    // Server error 
                     console.error("Error response:", error.response);
-                    alert("Failed to submit referral. Server error occurred.");
+                    alert(`Failed to submit referral: ${error.response.data.error || 'Server error occurred.'}`);
                 } else if (error.request) {
-                    // No response received
+                    // No response received from the server
                     console.error("Error request:", error.request);
                     alert("Failed to submit referral. No response from the server.");
                 } else {
-                    // Something else happened
+                    // Any other error 
                     console.error("Error message:", error.message);
                     alert("An unexpected error occurred. Please try again.");
                 }
             }
+        } else {
+            // If form is not valid, show validation error message
+            alert("Please fill in the form correctly before submitting.");
         }
     };
+    
 
     const nextPage = () => setPage((prev) => prev + 1);
     const prevPage = () => setPage((prev) => prev - 1);

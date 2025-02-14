@@ -1,6 +1,6 @@
 # 📝 **Accredian Refer & Earn Landing Page**
 
-This is a **Refer & Earn landing page** built using the **React JS**, **Tailwind CSS**, **Express**, **Axios**, and **Prisma ORM**. The project is deployed on **Vercel (Frontend)** and **Render (Backend)**, with **MySQL** as the database.  🎯
+This is the **frontend** for the **Refer & Earn landing page** developed using **React JS**, **Tailwind CSS**, **Express**, **Axios**, and **Prisma ORM**. The project incorporates robust **error handling** to manage various user and server issues effectively. Additionally, **Gmail notifications** are integrated to send automated email notifications to referrers after successful referrals. The application is deployed on **Vercel(Frontend)** and **Render (Backend)**, with **MySQL** as the database. 🎯
 
 ## 🌟 **Features**
 
@@ -8,6 +8,7 @@ This is a **Refer & Earn landing page** built using the **React JS**, **Tailwind
 - **Major & Niche Course Selection** 🎓: Dynamic course options based on the selected major.
 - **Form Validation** ✅: Input validation using **Zod** schema to ensure accurate data submission.
 - **Responsive UI** 📱: Built with **Tailwind CSS** and **Material UI** for a modern and responsive design.
+- **Error Handling** ⚠️: Comprehensive error handling for failed submissions, including validation feedback for users and clear alert messages, ensuring a smooth experience even when something goes wrong (e.g., "You cannot refer yourself" or "This course has already been referred to this person").
 - **API Integration** 🌐: Backend API built with **Express** and **Prisma ORM**, connected to **MySQL**.
 - **Deployment** 🚀: Frontend deployed on **Vercel** and Backend on **Render**.
 
@@ -16,7 +17,7 @@ This is a **Refer & Earn landing page** built using the **React JS**, **Tailwind
 - Node.js and npm installed  
 - MySQL installed locally or cloud-hosted  
 
-## ⚙️ Setup Instructions
+## ⚙️ Setup Instructions For Frontend
 
 1. **Clone the repository:**
    ```bash
@@ -47,6 +48,8 @@ This is a **Refer & Earn landing page** built using the **React JS**, **Tailwind
    npm start
    ```
 
+- For **backend** setup, please visit https://github.com/Krisha1703/Accredian-backend.
+
 ## 📸 **Screenshots**
 
 - **Refer & Earn Landing Page 🌍:**
@@ -61,15 +64,23 @@ This is a **Refer & Earn landing page** built using the **React JS**, **Tailwind
 - **Form Validation 🧑‍💻:**
   ![Form Validation](/public/screenshots/zod-validation2.png) 
 
+- **Referral Error 🧑‍💻:**
+  ![Referral Error](/public/screenshots/refer-same-person.png) 
+
+- **Referral Error 🧑‍💻:**
+  ![Referral Error](/public/screenshots/refer-yourself.png) 
+
 - **Referral Success 🎉:**
   ![Success](/public/screenshots/success.png)
 
+- **Referral Email Notification 🎉:**
+  ![Email Notification](/public/screenshots/refer-email.png)
 
 
 ## 🔧 Technologies Used
 
-- **Frontend**: React, Tailwind CSS, Axios  
-- **Backend**: Node.js, Express, Prisma ORM  
+- **Frontend**: React, Tailwind CSS, Material UI, Axios  
+- **Backend**: Node.js, Express, Prisma ORM, Gmail API
 - **Database**: MySQL  
 - **Deployment**: Vercel (Frontend), Render (Backend)  
 
