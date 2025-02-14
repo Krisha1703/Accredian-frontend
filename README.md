@@ -31,11 +31,17 @@ This is the **frontend** for the **Refer & Earn landing page** developed using *
    ```
 
 3. **Configure environment variables 🌍:**
-   - Create a `.env.local` file with the following:
+  - Create a `.env.local` file with the following:
      ```env
      REACT_APP_API_URL=http://localhost:5000/api/referrals
 
      ```
+  - Create a `.env.production` file with the following:
+     ```env
+     REACT_APP_API_URL="https://accredian-backend-97bp.onrender.com/api/referrals"
+
+     ```
+      > **Note**: You can replace "https://accredian-backend-97bp.onrender.com" with your render api.
 
 4. **Run the development server 🚀:**
    ```bash
